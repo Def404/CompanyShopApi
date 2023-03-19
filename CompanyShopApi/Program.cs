@@ -7,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<CompanyShopDbSettings>(
     builder.Configuration.GetSection("CompanyShopMongoDb"));
 builder.Services.AddSingleton<CategoryService>();
+builder.Services.AddSingleton<ConnectionInterfaceTypeService>();
+builder.Services.AddSingleton<HardDriveService>();
+builder.Services.AddSingleton<ClientService>();
+builder.Services.AddSingleton<EmployeeService>();
+builder.Services.AddSingleton<OrderService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

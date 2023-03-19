@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CompanyShopApi.Models;
 
-public class Category
+public class ConnectionInterfaceType
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -11,4 +11,7 @@ public class Category
     
     [BsonElement("name")]
     public string Name { get; set; } = null!;
+
+    [BsonElement("transfer_rate")]
+    public int TransferRate { get; set; }
 }

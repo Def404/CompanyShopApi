@@ -12,7 +12,7 @@ public class CategoryService
     {
         var mongoClient = new MongoClient(companyShopDbSet.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(companyShopDbSet.Value.DatabaseName);
-        _categoryCollection = mongoDatabase.GetCollection<Category>(companyShopDbSet.Value.CategoryCollectionName);
+        _categoryCollection = mongoDatabase.GetCollection<Category>("category");
     }
 
     public async Task<List<Category>> GetAsync() =>
