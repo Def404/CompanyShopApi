@@ -14,19 +14,8 @@ public class CategoryController :  ControllerBase
         _categoryService = categoryService;
 
     [HttpGet]
-    public async Task<List<Category>> Get() =>
-        await _categoryService.GetAsync();
-    
-    [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<Category>> Get(string id)
+    public async Task<List<Category>> Get()
     {
-        var category = await _categoryService.GetAsync(id);
-
-        if (category is null)
-        {
-            return NotFound();
-        }
-
-        return category;
+        return await _categoryService.GetAsync();
     }
 }
